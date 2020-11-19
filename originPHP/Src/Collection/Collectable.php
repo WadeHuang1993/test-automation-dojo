@@ -35,15 +35,6 @@ interface Collectable
     public function replace(array $parameters = []);
 
     /**
-     * 將陣列附加在集合中
-     *
-     * （提示：array_replace）
-     *
-     * Adds parameters.
-     */
-    public function add(array $parameters = []);
-
-    /**
      * 返回指定索引的內容物
      *
      * Returns a parameter by name.
@@ -72,6 +63,20 @@ interface Collectable
      * @return bool true if the parameter exists, false otherwise
      */
     public function has(string $key);
+
+    /**
+     * 返回符合查詢條件的內容物
+     *
+     * 效果類似 SQL 的 WHERE
+     *
+     * WHERE {$key} = {$condition}
+     *
+     * @param string $key 指定的索引
+     * @param string|int $condition 查詢條件
+     *
+     * @return mixed
+     */
+    public function where(string $key, $condition);
 
     /**
      * 移除指定索引的內容物
