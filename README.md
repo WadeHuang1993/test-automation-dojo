@@ -4,7 +4,7 @@
 ## 練習範例：
 
 - [使用原生 PHP 撰寫測試案例](https://github.com/WadeHuang1993/test-automation-dojo/tree/main/originPHP)
-- [撰寫爬蟲測試案例](https://github.com/WadeHuang1993/test-automation-dojo/tree/main/originPHP/BookCrawlers)
+- [以 BDD 風格撰寫爬蟲測試案例](https://github.com/WadeHuang1993/test-automation-dojo/tree/main/originPHP/Src/BookCrawlers)
 
 ## 文章區
 
