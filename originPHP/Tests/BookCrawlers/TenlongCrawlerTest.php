@@ -18,7 +18,6 @@ use Src\BookCrawlers\TenlongCrawler;
  */
 class TenlongCrawlerTest extends TestCase
 {
-
     /**
      * 測試取得網頁 html
      */
@@ -52,14 +51,6 @@ class TenlongCrawlerTest extends TestCase
         $book = $crawler->findBookByName($bookName);
 
         /** @then 爬蟲找到書籍並擷取出書籍內容 */
-        // 完整書名：領域驅動設計：軟體核心複雜度的解決方法 (Domain-Driven Design: Tackling Complexity in the Heart of Software)
-        // 書籍語言：繁體中文
-        // 作者名稱：Eric Evans
-        // 出版社：博碩文化
-        // 出版日期：2019-05-13
-        // 售價：530
-        // 超連結：https://www.tenlong.com.tw/products/9789864343874?list_name=srh
-        // 縮圖位置：https://cf-assets2.tenlong.com.tw/products/images/000/130/774/medium/9789864343874_bc.jpg?1554177163
         $this->assertSame([
             "name" => "領域驅動設計：軟體核心複雜度的解決方法 (Domain-Driven Design: Tackling Complexity in the Heart of Software)",
             "lang" => "繁體中文",

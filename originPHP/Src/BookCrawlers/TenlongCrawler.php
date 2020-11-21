@@ -16,7 +16,6 @@ use voku\helper\HtmlDomParser;
  */
 class TenlongCrawler
 {
-
     protected $baseURI = 'https://www.tenlong.com.tw';
 
     /**
@@ -64,7 +63,8 @@ class TenlongCrawler
         $publishDate = str_replace('出版日期：', '', $domItemInfo->findOne('.publish-date')->text());
         $price       = str_replace('售價: $', '', $domItemInfo->findOne('.price')->text());
 
-        return compact(["name", "lang", "author", "publisher", "publishDate", "price", "link", "picture"]);
+        $book = compact(["name", "lang", "author", "publisher", "publishDate", "price", "link", "picture"]);
+        return $book;
     }
 
     /**
@@ -83,7 +83,7 @@ class TenlongCrawler
         $dom = HtmlDomParser::str_get_html($html);
         $domBooks = (array) $dom->findOne('.book-list')->findMulti('li.single-book');
 
-        # GET BOOKS
+        # GET BOOKS INFO
         $books = array_map(function ($domBook) {
             $domTitleLink = $domBook->findOne('.title>a');
             return [
